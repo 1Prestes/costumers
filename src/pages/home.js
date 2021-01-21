@@ -1,6 +1,8 @@
+import React from "react";
+import { Redirect } from "react-router-dom";
+
 function Home() {
-    return <h1>Home</h1>;
-  }
-  
-  export default Home;
-  
+  return <Redirect to="/sign-in" />;
+}
+
+export default Home;
