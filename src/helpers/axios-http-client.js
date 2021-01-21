@@ -10,3 +10,8 @@ export const apiGet = (path) => {
   return axios.get(url);
 };
 
+export const apiPost = (path, data, options) => {
+  const url = baseUrl(path);
+
+  return axios.post(url, data, options);
+};
