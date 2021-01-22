@@ -1,9 +1,10 @@
 import { createContext } from "react";
-import { setCookie } from "../../helpers/storageCookie";
+import { getCookie, setCookie } from "../../helpers/storageCookie";
 
 const StoreContext = createContext({
   token: null,
   setToken: setCookie,
+  getToken: getCookie,
 });
 
 export default StoreContext;

@@ -7,7 +7,7 @@ const StoreProvider = ({ children }) => {
   const token = getCookie("tk");
   setCookie("tk", token);
   return (
-    <Context.Provider value={{ token, setToken: setCookie }}>
+    <Context.Provider value={{ token, setToken: setCookie, getToken: getCookie }}>
       {children}
     </Context.Provider>
   );
