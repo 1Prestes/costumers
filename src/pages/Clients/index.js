@@ -35,6 +35,7 @@ function Clients() {
             <th>UF</th>
             <th>Telephone</th>
             <th>E-mail</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -47,6 +48,18 @@ function Clients() {
               <td>{client.uf}</td>
               <td>{client.telephone}</td>
               <td>{client.email}</td>
+              <td>
+                <Link
+                  to={{
+                    pathname: "/clients/edit",
+                    search: client._id,
+                    state: { client },
+                  }}
+                >
+                  Edit
+                </Link>{" "}
+                <Link to="clients">Delete</Link>
+              </td>
             </tr>
           ))}
         </tbody>

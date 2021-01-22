@@ -7,6 +7,7 @@ import Home from "./pages/home";
 import SignIn from "./pages/SignIn";
 import Clients from "./pages/Clients";
 import CreateClient from "./pages/manage/clients/create";
+import EditClient from "./pages/manage/clients/edit";
 
 const Routes = () => {
   return (
@@ -17,6 +18,7 @@ const Routes = () => {
           <Route path="/sign-in" component={SignIn} />
           <PrivateRoute exact path="/clients" component={Clients} />
           <PrivateRoute path="/clients/new" component={CreateClient} />
+          <PrivateRoute path="/clients/edit" component={EditClient} />
         </Switch>
       </StoreProvider>
     </Router>
