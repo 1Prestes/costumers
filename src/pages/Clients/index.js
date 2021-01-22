@@ -14,6 +14,7 @@ const TableContainer = styled.div`
   overflow-x: auto;
   padding: 0 20px;
 `;
+
 const Table = styled.table`
   border-collapse: collapse;
   width: 100%;
