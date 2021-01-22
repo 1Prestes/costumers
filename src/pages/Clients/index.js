@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-// import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import StoreContext from "../../components/store/context";
 import { apiGet } from "../../helpers/axios-http-client";
 
 function Clients() {
   const [clients, setClients] = useState([]);
   const { getToken } = useContext(StoreContext);
-  // const history = useHistory();
   const token = getToken("tk");
-  // if (!token) return history.push("/");
 
   useEffect(() => {
     const options = {
@@ -26,6 +24,7 @@ function Clients() {
 
   return (
     <div>
+      <Link to="/clients/new">Add new client</Link>
       <table>
         <thead>
           <tr>
