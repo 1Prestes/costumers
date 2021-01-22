@@ -26,8 +26,12 @@ const ButtonLogin = styled.button`
   padding: 15px;
   border-radius: 3px;
   width: 100px;
-  background: green;
+  background: #198754;
   color: white;
+
+  &:hover {
+    background: #23714d;
+  }
 `;
 
 function SignIn() {
