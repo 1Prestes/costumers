@@ -50,7 +50,6 @@ function EditClient({ location }) {
   };
   const submitHandler = async (e) => {
     const data = getFormData(e);
-
     const response = await apiPost(
       "/client/update",
       { ...data, id: client._id },
@@ -69,37 +68,49 @@ function EditClient({ location }) {
           label="Name"
           type="text"
           name="name"
+          defaultValue={client.name}
           placeholder={client.name}
         />
         <FormGroup
           label="Address"
           type="text"
           name="address"
+          defaultValue={client.address}
           placeholder={client.address}
         />
         <FormGroup
           label="Neighborhood"
           type="text"
           name="neighborhood"
+          defaultValue={client.neighborhood}
           placeholder={client.neighborhood}
         />
         <FormGroup
           label="City"
           type="text"
           name="city"
+          defaultValue={client.city}
           placeholder={client.city}
         />
-        <FormGroup label="UF" type="text" name="uf" placeholder={client.uf} />
+        <FormGroup
+          label="UF"
+          type="text"
+          name="uf"
+          defaultValue={client.uf}
+          placeholder={client.uf}
+        />
         <FormGroup
           label="Telephone"
           type="text"
           name="telephone"
+          defaultValue={client.telephone}
           placeholder={client.telephone}
         />
         <FormGroup
           label="Email"
           type="text"
           name="email"
+          defaultValue={client.email}
           placeholder={client.email}
         />
         <Update aria-label="Update Client data">Update</Update>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Inputroup = styled.div`
@@ -16,30 +16,19 @@ const Input = styled.input`
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 `;
 
-function FormGroup({ data, name, label, type = "text", placeholder }) {
-  const [value, setValue] = useState("");
-
-  useEffect(() => {
-    const initialValue = data && data[name] ? data[name] : undefined;
-    if (initialValue !== undefined) setValue(initialValue);
-  }, [name, data]);
-
-  const handleChange = (e) => {
-    if (value === e.target.value) return;
-    setValue(e.target.value);
-  };
+function FormGroup({ data, name, label, type = "text", value, defaultValue, placeholder }) {
 
   const inputProps = {
     type,
     name,
-    value: value || "",
-    onChange: handleChange,
+    defaultValue,
+    placeholder,
   };
 
   return (
     <Inputroup>
       <Label>{label}</Label>
-      <Input {...inputProps} placeholder={placeholder} />
+      <Input {...inputProps} />
     </Inputroup>
   );
 }

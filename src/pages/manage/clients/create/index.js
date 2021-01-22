@@ -1,9 +1,37 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
 
+import FormGroup from "../../../../components/formGroup";
 import StoreContext from "../../../../components/store/context";
 import { apiPost } from "../../../../helpers/axios-http-client";
 import { getFormData } from "../../../../helpers/form";
+
+const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+`;
+
+const Form = styled.form`
+  background: #f1f1f1;
+  padding: 40px;
+  border-radius: 3px;
+  width: 100%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+`;
+
+const Register = styled.button`
+  margin-top: 30px;
+  text-align: center;
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  background: #198754;
+  color: white;
+`;
 
 function CreateClient() {
   const history = useHistory();
@@ -26,40 +54,31 @@ function CreateClient() {
   };
 
   return (
-    <div>
+    <Flex>
       <h2>Register new client</h2>
-      <form onSubmit={submitHandler}>
-        <div>
-          <label>Aame</label>
-          <input type="text" name="name" placeholder="Name" />
-        </div>
-        <div>
-          <label>Address</label>
-          <input type="text" name="address" placeholder="Address" />
-        </div>
-        <div>
-          <label>Neighborhood</label>
-          <input type="text" name="neighborhood" placeholder="Neighborhood" />
-        </div>
-        <div>
-          <label>City</label>
-          <input type="text" name="city" placeholder="City" />
-        </div>
-        <div>
-          <label>UF</label>
-          <input type="text" name="uf" placeholder="UF" />
-        </div>
-        <div>
-          <label>Telephone</label>
-          <input type="text" name="telephone" placeholder="Telephone" />
-        </div>
-        <div>
-          <label>E-mail</label>
-          <input type="text" name="email" placeholder="E-mail" />
-        </div>
-        <button aria-label="register new client">Register</button>
-      </form>
-    </div>
+      <Form onSubmit={submitHandler}>
+        <FormGroup label="Label" name="name" placeholder="Client name" />
+        <FormGroup
+          label="Address"
+          name="address"
+          placeholder="Client address"
+        />
+        <FormGroup
+          label="Neighborhood"
+          name="neighborhood"
+          placeholder="Client neighborhood"
+        />
+        <FormGroup label="City" name="city" placeholder="Client city" />
+        <FormGroup label="UF" name="uf" placeholder="Client UF" />
+        <FormGroup
+          label="Telephone"
+          name="telephone"
+          placeholder="Client telephone"
+        />
+        <FormGroup label="E-mail" name="email" placeholder="Client e-mail" />
+        <Register aria-label="register new client">Register</Register>
+      </Form>
+    </Flex>
   );
 }
 
