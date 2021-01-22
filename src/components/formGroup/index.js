@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
-function FormGroup({ data, name, label, type }) {
+const Inputroup = styled.div`
+  padding: 10px 0;
+`;
+const Label = styled.label`
+  font-size: 1.1em;
+  margin-bottom: 5px;
+`;
+const Input = styled.input`
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 1em;
+  width: 100%;
+`;
+
+function FormGroup({ data, name, label, type = "text", placeholder }) {
   const [value, setValue] = useState("");
 
   useEffect(() => {
@@ -21,10 +36,10 @@ function FormGroup({ data, name, label, type }) {
   };
 
   return (
-    <div>
-      <label>{label}</label>
-      <input {...inputProps} placeholder={data} />
-    </div>
+    <Inputroup>
+      <Label>{label}</Label>
+      <Input {...inputProps} placeholder={placeholder} />
+    </Inputroup>
   );
 }
 

@@ -38,28 +38,28 @@ function EditClient({ location }) {
     <div>
       <h1>Edit Client</h1>
       <form onSubmit={submitHandler}>
-        <FormGroup label="Name" type="text" name="name" data={client.name} />
+        <FormGroup label="Name" type="text" name="name" placeholder={client.name} />
         <FormGroup
           label="Address"
           type="text"
           name="address"
-          data={client.address}
+          placeholder={client.address}
         />
         <FormGroup
           label="Neighborhood"
           type="text"
           name="neighborhood"
-          data={client.neighborhood}
+          placeholder={client.neighborhood}
         />
-        <FormGroup label="City" type="text" name="city" data={client.city} />
-        <FormGroup label="UF" type="text" name="uf" data={client.uf} />
+        <FormGroup label="City" type="text" name="city" placeholder={client.city} />
+        <FormGroup label="UF" type="text" name="uf" placeholder={client.uf} />
         <FormGroup
           label="Telephone"
           type="text"
           name="telephone"
-          data={client.telephone}
+          placeholder={client.telephone}
         />
-        <FormGroup label="Email" type="text" name="email" data={client.email} />
+        <FormGroup label="Email" type="text" name="email" placeholder={client.email} />
         <button aria-label="Update Client data">Update</button>
       </form>
     </div>
