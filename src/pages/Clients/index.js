@@ -103,31 +103,32 @@ function Clients() {
             </tr>
           </thead>
           <tbody>
-            {clients.map((client) => (
-              <tr key={client._id}>
-                <td>{client.name}</td>
-                <td>{client.address}</td>
-                <td>{client.neighborhood}</td>
-                <td>{client.city}</td>
-                <td>{client.uf}</td>
-                <td>{client.telephone}</td>
-                <td>{client.email}</td>
-                <td>
-                  <Link
-                    to={{
-                      pathname: "/clients/edit",
-                      search: client._id,
-                      state: { client },
-                    }}
-                  >
-                    <Edit>Edit</Edit>
-                  </Link>{" "}
-                  <Link to="/clients">
-                    <Delete>Delete</Delete>
-                  </Link>
-                </td>
-              </tr>
-            ))}
+            {clients &&
+              clients.map((client) => (
+                <tr key={client._id}>
+                  <td>{client.name}</td>
+                  <td>{client.address}</td>
+                  <td>{client.neighborhood}</td>
+                  <td>{client.city}</td>
+                  <td>{client.uf}</td>
+                  <td>{client.telephone}</td>
+                  <td>{client.email}</td>
+                  <td>
+                    <Link
+                      to={{
+                        pathname: "/clients/edit",
+                        search: client._id,
+                        state: { client },
+                      }}
+                    >
+                      <Edit>Edit</Edit>
+                    </Link>{" "}
+                    <Link to="/clients">
+                      <Delete>Delete</Delete>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </Table>
       </TableContainer>
